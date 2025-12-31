@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Luxury Jewelry Theme - Warm Gold & Deep Charcoal */
+    --background: 30 10% 6%;
+    --foreground: 45 30% 94%;
+
+    --card: 30 8% 10%;
+    --card-foreground: 45 30% 94%;
+
+    --popover: 30 8% 10%;
+    --popover-foreground: 45 30% 94%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 30 10% 6%;
+
+    --secondary: 30 8% 15%;
+    --secondary-foreground: 45 30% 94%;
+
+    --muted: 30 8% 18%;
+    --muted-foreground: 45 15% 60%;
+
+    --accent: 43 50% 35%;
+    --accent-foreground: 45 30% 94%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 45 30% 94%;
+
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens for jewelry theme */
+    --gold: 43 74% 49%;
+    --gold-light: 43 74% 65%;
+    --gold-dark: 43 74% 35%;
+    --champagne: 45 40% 80%;
+    --velvet: 280 30% 8%;
+    --cream: 45 30% 92%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 74% 65%));
+    --gradient-dark: linear-gradient(180deg, hsl(30 10% 6%), hsl(30 8% 3%));
+    --gradient-shimmer: linear-gradient(90deg, transparent, hsl(43 74% 49% / 0.3), transparent);
+
+    /* Shadows */
+    --shadow-gold: 0 4px 30px hsl(43 74% 49% / 0.15);
+    --shadow-luxury: 0 20px 60px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 30 8% 8%;
+    --sidebar-foreground: 45 30% 94%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 30 10% 6%;
+    --sidebar-accent: 30 8% 15%;
+    --sidebar-accent-foreground: 45 30% 94%;
+    --sidebar-border: 30 10% 15%;
+    --sidebar-ring: 43 74% 49%;
+  }
+
+  .dark {
+    --background: 30 10% 6%;
+    --foreground: 45 30% 94%;
+    --card: 30 8% 10%;
+    --card-foreground: 45 30% 94%;
+    --popover: 30 8% 10%;
+    --popover-foreground: 45 30% 94%;
+    --primary: 43 74% 49%;
+    --primary-foreground: 30 10% 6%;
+    --secondary: 30 8% 15%;
+    --secondary-foreground: 45 30% 94%;
+    --muted: 30 8% 18%;
+    --muted-foreground: 45 15% 60%;
+    --accent: 43 50% 35%;
+    --accent-foreground: 45 30% 94%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 45 30% 94%;
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 43 74% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .text-gold {
+    @apply text-primary;
+  }
+
+  .bg-gold {
+    @apply bg-primary;
+  }
+
+  .border-gold {
+    @apply border-primary;
+  }
+
+  .verified-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary/20 text-primary rounded-full text-xs font-medium;
+  }
+
+  .product-card {
+    @apply relative overflow-hidden rounded-lg bg-card border border-border transition-all duration-300 hover:border-primary/50 hover:shadow-[var(--shadow-gold)];
+  }
+
+  .price-tag {
+    @apply text-xl font-display font-semibold text-primary;
+  }
+
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    background: var(--gradient-shimmer);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .gold-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 74% 70%));
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(43 74% 49% / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(43 74% 49% / 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}

@@ -37,24 +37,24 @@ export function Footer() {
             <h4 className="font-display text-lg font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/browse" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   Browse Jewelry
-                </Link>
+                </span>
               </li>
               <li>
-                <Link to="/categories" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   Categories
-                </Link>
+                </span>
               </li>
               <li>
-                <Link to="/shops" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   Local Shops
-                </Link>
+                </span>
               </li>
               <li>
-                <Link to="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   How It Works
-                </Link>
+                </span>
               </li>
             </ul>
           </div>
@@ -64,24 +64,24 @@ export function Footer() {
             <h4 className="font-display text-lg font-semibold text-foreground mb-4">For Shopkeepers</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/register?role=shopkeeper" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   Register Your Shop
-                </Link>
+                </span>
               </li>
               <li>
-                <Link to="/dashboard" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   Seller Dashboard
-                </Link>
+                </span>
               </li>
               <li>
-                <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   Pricing
-                </Link>
+                </span>
               </li>
               <li>
-                <Link to="/support" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground transition-colors">
                   Support
-                </Link>
+                </span>
               </li>
             </ul>
           </div>
@@ -109,7 +109,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2024 JewelBridge. All rights reserved.
+            © 2025 JewelBridge. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
